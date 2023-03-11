@@ -92,13 +92,13 @@ body {
 .arrow {
     width: 1em;
     height: 1em;
-    /*display: none;*/
+    display: none;
     transition: all 1s linear;
 }
 
 .mem {
-    width: 50vw;
-    height: 40vh;
+    width: 0;
+    height: 0;
     align-self: center;
     background-size: cover;
     border: none;
@@ -147,3 +147,51 @@ a:visited {
     width: 4.1em;
     height: 2em;
 }
+
+/* animation on hover start*/
+.main:hover,
+.main:hover label {
+    cursor: pointer;
+}
+
+.main:hover p {
+    color: var(--main-text-color);
+}
+
+.main:hover .arrow {
+    display: block;
+}
+
+.bayan-item:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.bayan-item:hover .mem {
+    width: 40vw;
+    height: 35vh;
+    border: 0.1em solid var(--light-border-color);
+    border-radius: 0.5em;
+}
+/* animation on hover end*/
+
+/* animation on checked and active conditions start*/
+
+input:active ~ .input-title > p {
+    color: var(--highlited-text-color);
+}
+
+input:checked ~ .input-title > p {
+    color: var(--main-text-color);
+}
+
+input:checked ~ .mem {
+    width: 40vw;
+    height: 35vh;
+    border: 0.1em solid var(--light-border-color);
+    border-radius: 0.5em;
+}
+
+input:checked ~ .input-title > .arrow {
+    transform: rotate(180deg);
+}
+/* animation on checked and active conditions end*/
