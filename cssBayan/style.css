@@ -245,7 +245,7 @@ a:visited {
     }
 }
 
-@media (max-width: 1040px) {
+@media (max-width: 1020px) {
     body {
         font: var(--tablet-font);
         font-weight: 600;
@@ -261,12 +261,24 @@ a:visited {
 
     .bayan-item:hover .mem {
         width: 40vw;
-        height: 22vh;
+        height: 20vh;
     }
 
     input:checked ~ .mem {
         width: 40vw;
-        height: 22vh;
+        height: 20vh;
+    }
+}
+
+@media (max-width: 920px) {
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 18vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 18vh;
     }
 }
 
@@ -283,15 +295,7 @@ a:visited {
     .footer {
         font: var(--small-mobile-font)
     }
-    .bayan-item:hover .mem {
-        width: 40vw;
-        height: 20vh;
-    }
 
-    input:checked ~ .mem {
-        width: 40vw;
-        height: 20vh;
-    }
 }
 
 @media (max-width: 450px) {
@@ -310,11 +314,11 @@ a:visited {
     }
     .bayan-item:hover .mem {
         width: 40vw;
-        height: 15vh;
+        height: 12vh;
     }
 
     input:checked ~ .mem {
         width: 40vw;
-        height: 15vh;
+        height: 12vh;
     }
 }
