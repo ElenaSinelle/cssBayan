@@ -21,6 +21,7 @@
     --main-font: normal 2rem/2.2rem Merienda;
     --tablet-font: normal 1.7rem/1.8rem Merienda;
     --mobile-font: normal 1.2rem/1.3rem Merienda;
+    --small-mobile-font: normal 0.8rem/0.9rem Merienda;
     --main-text-color: #422a2a;
     --highlited-text-color: #238091;
     --main-bg-color: #f5e9e9;
@@ -148,50 +149,172 @@ a:visited {
     height: 2em;
 }
 
-/* animation on hover start*/
-.main:hover,
-.main:hover label {
-    cursor: pointer;
+/*mediaqueries start*/
+
+@media (hover: hover) {
+    /* animation on hover start*/
+    .main:hover,
+    .main:hover label {
+        cursor: pointer;
+    }
+
+    .main:hover p {
+        color: var(--main-text-color);
+    }
+
+    .main:hover .arrow {
+        display: block;
+    }
+
+    .bayan-item:hover .arrow {
+        transform: rotate(180deg);
+    }
+
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 35vh;
+        border: 0.1em solid var(--light-border-color);
+        border-radius: 0.5em;
+    }
+
+    /* animation on checked and active conditions start*/
+
+    input:active ~ .input-title > p {
+        color: var(--highlited-text-color);
+    }
+
+    input:checked ~ .input-title > p {
+        color: var(--main-text-color);
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 35vh;
+        border: 0.1em solid var(--light-border-color);
+        border-radius: 0.5em;
+    }
+
+    input:checked ~ .input-title > .arrow {
+        transform: rotate(180deg);
+    }
 }
 
-.main:hover p {
-    color: var(--main-text-color);
-}
-
-.main:hover .arrow {
-    display: block;
-}
-
-.bayan-item:hover .arrow {
-    transform: rotate(180deg);
-}
-
-.bayan-item:hover .mem {
-    width: 40vw;
-    height: 35vh;
-    border: 0.1em solid var(--light-border-color);
-    border-radius: 0.5em;
-}
-/* animation on hover end*/
-
+@media (hover: none) {
 /* animation on checked and active conditions start*/
+    .arrow {
+        display: block;
+    }
 
-input:active ~ .input-title > p {
-    color: var(--highlited-text-color);
+    input:checked ~ .input-title > p {
+        color: var(--main-text-color);
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 35vh;
+        border: 0.1em solid var(--light-border-color);
+        border-radius: 0.5em;
+    }
+
+    input:checked ~ .input-title > .arrow {
+        transform: rotate(180deg);
+    }
 }
 
-input:checked ~ .input-title > p {
-    color: var(--main-text-color);
+@media (max-width: 1700px) {
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 35vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 35vh;
+    }
 }
 
-input:checked ~ .mem {
-    width: 40vw;
-    height: 35vh;
-    border: 0.1em solid var(--light-border-color);
-    border-radius: 0.5em;
+@media (max-width: 1240px) {
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 25vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 25vh;
+    }
 }
 
-input:checked ~ .input-title > .arrow {
-    transform: rotate(180deg);
+@media (max-width: 1040px) {
+    body {
+        font: var(--tablet-font);
+        font-weight: 600;
+    }
+
+    .header {
+        font: var(--main-font);
+    }
+
+    .footer {
+        font: var(--mobile-font);
+    }
+
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 22vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 22vh;
+    }
 }
-/* animation on checked and active conditions end*/
+
+@media (max-width: 700px) {
+    body {
+        font: var(--mobile-font);
+        font-weight: 300;
+    }
+
+    .header {
+        font: var(--tablet-font);
+    }
+
+    .footer {
+        font: var(--small-mobile-font)
+    }
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 20vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 20vh;
+    }
+}
+
+@media (max-width: 450px) {
+    body {
+        font: var(--small-mobile-font);
+        font-weight: 300;
+    }
+
+    .header {
+        font: var(--mobile-font);
+    }
+
+    .footer {
+        font-size: 0.45rem;
+        line-height: 0.5rem;
+    }
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 15vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 15vh;
+    }
+}
