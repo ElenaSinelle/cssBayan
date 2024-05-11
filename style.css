@@ -1,0 +1,324 @@
+@font-face {
+    font-family: 'Merienda';
+    src: url("assets/fonts/Merienda-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Merienda';
+    src: url("assets/fonts/Merienda-Bold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Merienda';
+    src: url("assets/fonts/Merienda-ExtraBold.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+
+:root {
+    --main-font: normal 2rem/2.2rem Merienda;
+    --tablet-font: normal 1.7rem/1.8rem Merienda;
+    --mobile-font: normal 1.2rem/1.3rem Merienda;
+    --small-mobile-font: normal 0.8rem/0.9rem Merienda;
+    --main-text-color: #422a2a;
+    --highlited-text-color: #238091;
+    --main-bg-color: #f5e9e9;
+    --border-color: #c46b6b;
+    --light-border-color: #e6b3b3;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    font: var(--main-font);
+    color: var(--main-text-color);
+    font-weight: 600;
+}
+
+.general-container {
+    margin: 0 auto;
+    max-width: 100vw;
+    margin: 3em;
+    border: 0.3em solid var(--border-color);
+    border-radius: 0.8em;
+    padding: 2em 3em;
+    background-color: var(--main-bg-color);
+}
+
+.header {
+    font-size: 2.4rem;
+    line-height: 2.5rem;
+    font-weight: 800;
+    padding-bottom: 0.5em;
+    border-bottom: 0.1em solid var(--light-border-color);
+}
+
+.main {
+    color: var(--highlited-text-color);
+}
+
+.bayan-item {
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    border-bottom: 0.1em solid var(--light-border-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.radio-circle {
+    opacity: 0;
+}
+
+.arrow {
+    width: 1em;
+    height: 1em;
+    display: none;
+    transition: all 1s linear;
+}
+
+.mem {
+    width: 0;
+    height: 0;
+    align-self: center;
+    background-size: cover;
+    border: none;
+    transition: all 1s linear;
+}
+
+.mem-1 {
+    background-image: url(assets/img/gif/1-cant-copy.gif);
+}
+
+.mem-2 {
+    background-image: url(assets/img/gif/2-keep-calm.gif);
+}
+
+.mem-3 {
+    background-image: url(assets/img/gif/3-work-life-balance.gif);
+}
+
+.mem-4 {
+    background-image: url(assets/img/gif/4-dude-wheres-js.gif);
+}
+
+.mem-5 {
+    background-image: url(assets/img/gif/5-relax-takteasy.gif);
+}
+
+.footer {
+    font: var(--tablet-font);
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+a:visited {
+    color: var(--main-text-color);
+}
+
+.rs-logo {
+    width: 4.1em;
+    height: 2em;
+}
+
+/*mediaqueries start*/
+
+@media (hover: hover) {
+    /* animation on hover start*/
+    .main:hover,
+    .main:hover label {
+        cursor: pointer;
+    }
+
+    .main:hover p {
+        color: var(--main-text-color);
+    }
+
+    .main:hover .arrow {
+        display: block;
+    }
+
+    .bayan-item:hover .arrow {
+        transform: rotate(180deg);
+    }
+
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 35vh;
+        border: 0.1em solid var(--light-border-color);
+        border-radius: 0.5em;
+    }
+
+    /* animation on checked and active conditions start*/
+
+    input:active ~ .input-title > p {
+        color: var(--highlited-text-color);
+    }
+
+    input:checked ~ .input-title > p {
+        color: var(--main-text-color);
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 35vh;
+        border: 0.1em solid var(--light-border-color);
+        border-radius: 0.5em;
+    }
+
+    input:checked ~ .input-title > .arrow {
+        transform: rotate(180deg);
+    }
+}
+
+@media (hover: none) {
+/* animation on checked and active conditions start*/
+    .arrow {
+        display: block;
+    }
+
+    input:checked ~ .input-title > p {
+        color: var(--main-text-color);
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 35vh;
+        border: 0.1em solid var(--light-border-color);
+        border-radius: 0.5em;
+    }
+
+    input:checked ~ .input-title > .arrow {
+        transform: rotate(180deg);
+    }
+}
+
+@media (max-width: 1700px) {
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 35vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 35vh;
+    }
+}
+
+@media (max-width: 1240px) {
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 25vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 25vh;
+    }
+}
+
+@media (max-width: 1020px) {
+    body {
+        font: var(--tablet-font);
+        font-weight: 600;
+    }
+
+    .header {
+        font: var(--main-font);
+    }
+
+    .footer {
+        font: var(--mobile-font);
+    }
+
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 20vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 20vh;
+    }
+}
+
+@media (max-width: 920px) {
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 18vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 18vh;
+    }
+}
+
+@media (max-width: 700px) {
+    body {
+        font: var(--mobile-font);
+        font-weight: 300;
+    }
+
+    .header {
+        font: var(--tablet-font);
+    }
+
+    .footer {
+        font: var(--small-mobile-font)
+    }
+
+}
+
+@media (max-width: 450px) {
+    body {
+        font: var(--small-mobile-font);
+        font-weight: 300;
+    }
+
+    .header {
+        font: var(--mobile-font);
+    }
+
+    .footer {
+        font-size: 0.45rem;
+        line-height: 0.5rem;
+    }
+    .bayan-item:hover .mem {
+        width: 40vw;
+        height: 12vh;
+    }
+
+    input:checked ~ .mem {
+        width: 40vw;
+        height: 12vh;
+    }
+}
